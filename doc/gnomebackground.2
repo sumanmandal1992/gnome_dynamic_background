@@ -1,0 +1,24 @@
+.\" Manpage for gnome-background.
+.TH man 8 "15 August 2023" "1.0" "Uninstall gnome background man page"
+.SH NAME
+uninstall \- Uninstall existing gnome background.
+.SH SYNOPSIS
+sh uninstall.sh [option] [name]
+.SH DESCRIPTION
+It will delete all the slideshow components such as all the images and comfiguration files from /home/user/.local/share/background and /home/user/.local/share/gnome-background-properties.
+.SH OPTIONS
+.SS -a:
+Delete all the existing slideshow.
+.SS -n: -n name
+Delete the given slideshow.
+.SH EXAMPLE
+.SS [1]
+.nf
+sh uninstall.sh -a
+[ It will delete all the existing slideshow. ]
+.SS [2]
+.nf
+sh uninstall.sh -n nature
+[ It will delete the slideshow nature ]
+.SH AUTHOR
+Suman Mandal

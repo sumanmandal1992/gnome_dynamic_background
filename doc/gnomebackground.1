@@ -1,0 +1,50 @@
+.\" Manpage for gnome-background.
+.TH man 8 "15 August 2023" "1.0" "Install gnome background man page"
+
+.SH NAME
+gnome-backgrounds \- Create gnome background slide show.
+
+.SH SYNOPSIS
+sh gnome-backgrounds.sh [option] [source] [option] [output]
+
+.SH DESCRIPTION
+These shell scripts helps to create gnome background slide show that you can apply from your appearence. The default timing for a slide is one hour and it takes two seconds to change the slide. You can create multiple slide show using these scripts with different name.
+
+.SH OPTIONS
+.SS -q:
+Query the existing slideshows.
+.nf
+[Usage]
+sh gnome-backgrounds.sh -q
+[ Note: Don't use any other options with -q ]
+.SS -d:
+Copy the images from the given location to the destination.
+.nf
+[Usage]
+sh gnome-backgrounds.sh -d /home/user/Picture
+.SS -o:
+Create directory of the given name to the destination for the slide show components.
+.nf
+[Usage]
+sh gnome-backgrounds.sh -o nature
+
+.SH EXAMPLE:
+.SS [1]
+.nf
+sh gnome-backgrounds.sh -o nature -d /home/user/Picture
+[ It will create a 'nature' directory in the destination and copy images from '/home/user/Picture' location to 'nature' ]
+.SS [2]
+.nf
+sh gnome-backgrounds.sh -d /home/user/Picture
+[ It will copy images from '/home/user/Picture' directory to destination directory created using default name  backgrounds ]
+.SS [3]
+.nf
+sh gnome-backgrounds.sh -o animal
+[ It will create directory animal in destination and copy images from the existing 'Images' directory on the current location. ]
+.SS [4]
+.nf
+sh gnome-backgrounds.sh
+[ It will create directory with default name 'backgrounds' and copy images from 'Images' directory on the current location to destination. ]
+
+.SH AUTHOR
+Suman Mandal
