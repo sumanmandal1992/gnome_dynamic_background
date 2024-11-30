@@ -20,21 +20,20 @@ filepath=$1
 #	fi
 #	filepath=$PWD/$path
 #fi
-
+h=1                 # Hour(s)
+t=$(($h * 60 * 60)) # Interval
 len=${#arr[@]}
 echo "<background>"
-for (( i=0; $i<$len; i=$i+1 ))
-do
+for ((i = 0; $i < $len; i = $i + 1)); do
 	next=$(expr $i + 1)
 	echo -e "\t<static>"
-	echo -e "\t\t<duration>3600</duration>"
+	echo -e "\t\t<duration>$t</duration>"
 	echo -e "\t\t<file>$filepath/${arr[i]}</file>"
 	echo -e "\t</static>"
 	echo -e '\t<transition type="overlay">'
 	echo -e "\t\t<duration>2</duration>"
 	echo -e "\t\t<from>$filepath/${arr[i]}</from>"
-	if [[ $next == $len ]]
-	then
+	if [[ $next == $len ]]; then
 		echo -e "\t\t<to>$filepath/${arr[0]}</to>"
 	else
 		echo -e "\t\t<to>$filepath/${arr[next]}</to>"
